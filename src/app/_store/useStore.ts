@@ -65,6 +65,7 @@ const store = create<StoreType>()(
     )
   )
 );
+
 const useStore = new Proxy(store, {
   get(target, prop) {
     if (prop === "setState") {
