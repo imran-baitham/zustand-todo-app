@@ -61,9 +61,6 @@ const store = create<StoreType>()(
       }),
       {
         name: "posts-store",
-        getStorage: () => sessionStorage,
-        serialize: (state) => btoa(JSON.stringify(state)),
-        deserialize: (str) => JSON.parse(atob(str)),
       }
     )
   )

@@ -75,14 +75,14 @@ export default function Posts() {
         />
         <button
           onClick={isEdit ? handleEditPost : handleSubmit}
-          className="p-1 border w-full rounded-lg"
+          className="py-2 w-full rounded-lg bg-blue-500 text-white border-none"
           type="submit"
         >
           {isEdit ? "Edit Post" : "Add New Post"}
         </button>
       </form>
 
-      {posts.length < 0 ? (
+      {posts.length > 0 ? (
         posts.map((post: PostItemsProps, index: number) => (
           <div key={index} className="border p-5 rounded-lg max-w-lg">
             <h1 className="font-bold text-xl">{post.title}</h1>
@@ -95,7 +95,7 @@ export default function Posts() {
                 Edit
               </button>
               <button
-                className="p-1 border w-full rounded-lg bg-red-500"
+                className="p-1 border w-full rounded-lg bg-red-500 text-white"
                 onClick={() => handleRemovePost(post.id)}
               >
                 Delete
